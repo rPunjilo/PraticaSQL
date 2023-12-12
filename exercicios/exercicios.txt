@@ -1,0 +1,36 @@
+--------Aula 11 - Exercícios
+
+1- Quantos produtos temos cadastrados no sistema, no qual custam mais de 1500 dólares? 39
+
+SELECT count(*)
+FROM Production.Product
+WHERE ListPrice > 1500;
+
+2- Quantas pessoas possuem o sobrenome iniciado com a letra 'P'? 1187
+
+SELECT count(*)
+FROM Person.Person
+WHERE LastName like 'P%';
+
+3- Em quantas cidades únicas estão cadastrados nossos clientes? 10
+
+SELECT COUNT(DISTINCT TerritoryID)
+FROM Sales.Customer;
+
+4- Quais são as cidades únicas que temos cadastrados em nosso sistema?
+
+SELECT DISTINCT City
+FROM Person.Address;
+
+5- Quantos produtos vermelhos possuem o preço entre 500 a 1000 dólares? 11
+
+SELECT COUNT(*)
+FROM Production.Product
+WHERE COLOR = 'red' AND ListPrice BETWEEN 500 AND 1000;
+
+6- Quantos produtos tem a palavra 'road' no nome? 103
+
+
+SELECT count(*)
+FROM Production.Product
+WHERE Name LIKE '%road%';

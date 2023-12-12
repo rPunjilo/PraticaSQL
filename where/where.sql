@@ -1,0 +1,49 @@
+--Aula 4- WHERE
+--Basicamente uma condicional
+
+SELECT *
+FROM person.Person
+WHERE LastName = 'miller' and FirstName = 'Anna';
+
+SELECT *
+FROM Production.Product
+WHERE Color = 'blue' or Color = 'red';
+
+SELECT *
+FROM Production.Product
+WHERE ListPrice > 1500
+
+SELECT *
+FROM Production.Product
+WHERE ListPrice > 1500 and ListPrice < 3500
+
+SELECT *
+FROM Production.Product
+WHERE Color <> 'red';
+-- <> é o diferente !=
+
+--Desafio 1
+--Mô nengue, a  equipe de produção precisa do nome de todas as peças que pesam mais de 500 kg e menos 700 kg para inspeção. 
+SELECT Name, Weight
+FROM Production.Product
+WHERE Weight >= 500 and Weight <= 700;
+
+--Desafio 2
+--A equipe de marketing deseja uma relação de todos os empregados que são casados e assalariados
+
+SELECT *
+FROM HumanResources.Employee
+WHERE MaritalStatus = 'M' and SalariedFlag = 1;
+
+--Desafio 3
+--Um usuário chamado Peter Krebs está devendo um pagamento! Consiga o email dele para que possamos enviar uma cobrança!
+
+SELECT BusinessEntityID
+FROM Person.Person
+WHERE FirstName = 'Peter' and LastName = 'Krebs';
+
+--O resultado dessa busca deu que o Id do caloteiro é 26
+
+SELECT EmailAddress
+FROM Person.EmailAddress
+WHERE BusinessEntityID = 26;

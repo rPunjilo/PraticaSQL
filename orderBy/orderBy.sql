@@ -1,0 +1,37 @@
+--Aula 7 - Order by
+--Irá retornar os dados de uma maneira crescente ou decrescente. Pode ser tanto com int ou string
+
+SELECT *
+FROM Person.Person
+ORDER BY FirstName asc;
+
+--Começa com a letra de A até Z
+
+SELECT *
+FROM Person.Person
+ORDER BY FirstName desc;
+
+--Letra Z até A
+
+-----------------------------------
+--Podemos colocar parâmetros para filtragem
+
+SELECT FirstName, LastName
+FROM Person.Person
+ORDER BY FirstName asc, LastName asc;
+
+-------------------------------------
+
+--------Desafio 1
+--Obter o ProductId dos 10 produtos mais caros no sistema, listando do mais caro para o mais barato
+
+SELECT TOP 10 ProductID, ListPrice
+FROM Production.Product
+ORDER BY ListPrice desc
+
+--------Desafio 2
+--Obter o nome e número dos produtos que tem o ProductID entre 1 e 4
+
+SELECT TOP 4 Name, ProductNumber
+FROM Production.Product
+ORDER BY ProductID asc;

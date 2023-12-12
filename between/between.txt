@@ -1,0 +1,17 @@
+----Aula 08 - Between
+//O between é usado para encontrar um valor entre um valor mínimo e valor máximo
+Mesmo conceito: 
+valor >= mínimo and valor <= máximo;
+
+SELECT Name, ListPrice
+FROM Production.Product
+WHERE ListPrice between 1000 and 1500;
+
+SELECT Name, ListPrice
+FROM Production.Product
+WHERE ListPrice NOT between 1000 and 1500;
+
+SELECT NationalIDNumber, JobTitle, HireDate
+FROM HumanResources.Employee
+WHERE HireDate BETWEEN '2009/01/01' and '2010/01/01'
+ORDER BY HireDate;
